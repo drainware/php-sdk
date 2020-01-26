@@ -1,0 +1,10 @@
+// $Id$
+// vim:ft=javascript
+
+ARG_ENABLE("win32std", "win32std", "yes");
+
+if (PHP_WIN32STD == "yes") {
+	CHECK_LIB("comdlg32.lib", "win32std", PHP_WIN32STD)
+	CHECK_LIB("winmm.lib", "win32std", PHP_WIN32STD)
+	EXTENSION("win32std", "win32std.c res_stream.c registry.c res.c cpp_functions.cpp");
+}
